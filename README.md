@@ -100,6 +100,14 @@ defined in a simple dictionary object. Each state transition includes three phas
 Along with this, there is a timer based event system for traversing the FSM. It will
 also allow interrupts from the ESP32 pins.
 
+Some Interesting Micropython Code
+---------------------------------
+
+* The Finite State Machine contains _thread usage
+* The mains power and sd card libraries contain reliable de-bouncing code for pin inputs
+* The sd card library auto-mounts cards
+* The LED array controller contains memory efficient and fast compression
+
 Transferring to the ESP32
 =========================
 
