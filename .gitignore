@@ -1,0 +1,5 @@
+*.bin
+micropython
+venv
+.idea
+__pycache__
