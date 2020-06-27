@@ -24,6 +24,7 @@ The ESP32 controls a few bits of hardware:
 * A bell (A solenoid and a bicycle bell)
 * The mains switch for a D19 plug panel
 * Safely switching the Raspberry Pi off
+* A threaded Moore Finite State Machine
 
 The 4 Channel Relay Board
 -------------------------
@@ -82,6 +83,22 @@ The Bell
 
 This is a bicycle bell and a solenoid. The library deals with the signalling necessary
 to make it ring. It has all the timing plus it has some monotonic tunes built in.
+
+The Finite State Machine
+------------------------
+
+Although this is not a hardware controller, it is important in that it uses the
+under-documented Micropython _thread library to provide a Moore based FSM.
+
+This class allows the definition of states and transitions by Micropython callables
+defined in a simple dictionary object. Each state transition includes three phases:
+
+1. Exiting a previous state
+2. Entering the new state
+3. Looping while in the current state
+
+Along with this, there is a timer based event system for traversing the FSM. It will
+also allow interrupts from the ESP32 pins.
 
 Transferring to the ESP32
 =========================
