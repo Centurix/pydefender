@@ -107,6 +107,7 @@ Some Interesting Micropython Code
 * The mains power and sd card libraries contain reliable de-bouncing code for pin inputs
 * The sd card library auto-mounts cards
 * The LED array controller contains memory efficient and fast compression
+* There is an emulation of the machine.Timer that works for the Unix port of Micropython
 
 Transferring to the ESP32
 =========================
